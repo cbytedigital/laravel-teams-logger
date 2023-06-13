@@ -1,8 +1,8 @@
 # Laravel Teams Logger
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/cbytedigital/laravel-bi-data-export.svg)](https://packagist.org/packages/cbytedigital/laravel-bi-data-export)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/cbytedigital/laravel-bi-data-export.svg)](https://packagist.org/packages/cbytedigital/laravel-bi-data-export)
-[![Software License](https://img.shields.io/packagist/l/cbytedigital/laravel-bi-data-export.svg)](LICENSE.md)
-[![Total Downloads](https://img.shields.io/packagist/dt/cbytedigital/laravel-bi-data-export.svg)](https://packagist.org/packages/cbytedigital/laravel-bi-data-export)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/cbytedigital/laravel-teams-logger.svg)](https://packagist.org/packages/cbytedigital/laravel-teams-logger)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/cbytedigital/laravel-teams-logger.svg)](https://packagist.org/packages/cbytedigital/laravel-teams-logger)
+[![Software License](https://img.shields.io/packagist/l/cbytedigital/laravel-teams-logger.svg)](LICENSE.md)
+[![Total Downloads](https://img.shields.io/packagist/dt/cbytedigital/laravel-teams-logger.svg)](https://packagist.org/packages/cbytedigital/laravel-teams-logger)
 
 A [Laravel](https://laravel.com) package which can be used for log handling through laravel logging using the Microsoft teams webhook.
 
