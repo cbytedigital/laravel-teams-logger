@@ -107,9 +107,16 @@ class TeamsLoggerHandler extends AbstractProcessingHandler
     /**
      * @param array $record
      */
-    protected function write(LogRecord $record): void
+    protected function write($record): void
     {
-        $json = json_encode($this->getMessage($record->toArray()));
+        $json = null;
+
+        if ($record instanceof LogRecord) {
+            $json = json_encode($this->getMessage($record->toArray()));
+        } else {
+            $json = json_encode($this->getMessage($record));
+        }
+
 
         $ch = curl_init($this->url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
