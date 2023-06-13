@@ -7,7 +7,6 @@
 A [Laravel](https://laravel.com) package which can be used for log handling through laravel logging using the Microsoft teams webhook.
 
 ## Installation
-
 Use composer to install this package:
 
 ```bash
