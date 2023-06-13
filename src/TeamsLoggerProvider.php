@@ -9,17 +9,17 @@ use Illuminate\Support\ServiceProvider;
 class TeamsLoggerProvider extends ServiceProvider
 {
     /**
-     * Register any authentication / authorization services.
+     * Register any application services.
      */
-    public function boot(): void
+    public function register(): void
     {
         //
     }
 
     /**
-     * Register any application services.
+     * Register any authentication / authorization services.
      */
-    public function register(): void
+    public function boot(): void
     {
         //
     }
