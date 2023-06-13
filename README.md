@@ -1,17 +1,17 @@
-# Laravel Teams Exception Logger
+# Laravel Teams Logger
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/cbytedigital/laravel-bi-data-export.svg)](https://packagist.org/packages/cbytedigital/laravel-bi-data-export)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/cbytedigital/laravel-bi-data-export.svg)](https://packagist.org/packages/cbytedigital/laravel-bi-data-export)
 [![Software License](https://img.shields.io/packagist/l/cbytedigital/laravel-bi-data-export.svg)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/cbytedigital/laravel-bi-data-export.svg)](https://packagist.org/packages/cbytedigital/laravel-bi-data-export)
 
-A [Laravel](https://laravel.com) package which can be used for exception handling through laravel logging using the Microsoft teams webhook.
+A [Laravel](https://laravel.com) package which can be used for log handling through laravel logging using the Microsoft teams webhook.
 
 ## Installation
 
 Use composer to install this package:
 
 ```bash
-$ composer require cbytedigital/laravel-teams-exception-logger
+$ composer require cbytedigital/laravel-teams-logger
 ```
 
 ## Usage
