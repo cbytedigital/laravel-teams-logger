@@ -15,7 +15,6 @@ $ composer require cbytedigital/laravel-teams-logger
 ```
 
 ## Usage
-
 After installing the package through composer, we need to edit the logging. We have to add a teams channel with the following information. (The channel name can be whatever you want, just match it with the channel entered in the array of the stack channel)
 ```php
 'channels' => [
