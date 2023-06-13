@@ -1,12 +1,12 @@
 <?php
 
 
-namespace CbyteDigital\TeamsExceptionLogger;
+namespace CbyteDigital\TeamsLogger;
 
 
 use Illuminate\Support\ServiceProvider;
 
-class TeamsExceptionLoggerProvider extends ServiceProvider
+class TeamsLoggerProvider extends ServiceProvider
 {
     /**
      * Register any authentication / authorization services.

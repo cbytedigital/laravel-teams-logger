@@ -1,6 +1,6 @@
 <?php
 
-namespace CbyteDigital\TeamsExceptionLogger\Logging;
+namespace CbyteDigital\TeamsLogger\Logging;
 
 class TeamsLoggerMessage implements \ArrayAccess
 {
