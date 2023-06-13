@@ -1,0 +1,11 @@
+pipelines:
+  default:
+    - step:
+        name: Sync GitHub Mirror
+        image: alpine/git:latest
+        clone:
+          enabled: false
+        script:
+          - git clone --bare git@bitbucket.org:cbytedigital/laravel-teams-exception-logger.git
+          - cd laravel-teams-exception-logger.git
+          - git push --mirror git@github.com:cbytedigital/laravel-teams-exception-logger.git

@@ -1,0 +1,44 @@
+{
+    "name": "cbytedigital/laravel-teams-exception-logger",
+    "description": "Laravel package to log exceptions to a Microsoft Teams channel using Microsoft Teams Webhooks.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kay Smits",
+            "email": "k.smits@cbyte.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "scripts": {
+        "test": "phpunit"
+    },
+    "autoload": {
+        "psr-4": {
+            "CbyteDigital\\TeamsExceptionLogger\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CbyteDigital\\TeamsExceptionLogger\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "laravel/framework": "^8.37|^9.0|^10.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3.3",
+        "orchestra/testbench": "^6.12.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CbyteDigital\\TeamsExceptionLogger\\TeamsExceptionLoggerProvider"
+            ],
+            "aliases": {
+                "TeamsExceptionLoggerService": "CbyteDigital\\TeamsExceptionLogger\\Facades\\TeamsExceptionLoggerService"
+            }
+        }
+    }
+}
