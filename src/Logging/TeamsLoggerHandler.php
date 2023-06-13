@@ -39,8 +39,7 @@ class TeamsLoggerHandler extends AbstractProcessingHandler
 
         $stacktrace = '';
 
-        $whitespace =
-            [
+        $whitespace = [
                 'name' => ' ',
                 'value' => ' ',
             ];
