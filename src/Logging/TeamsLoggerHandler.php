@@ -72,7 +72,7 @@ class TeamsLoggerHandler extends AbstractProcessingHandler
                             'value' => request()->user() instanceof User ? request()->user()->email : 'Unknown',
                         ],
                         (
-                            defined (LARAVEL_START) ?
+                            defined ('LARAVEL_START') ?
                             [
                                 'name' => 'Execution time:',
                                 'value' => floor((microtime(true) - LARAVEL_START) * 1000) . 'ms',
