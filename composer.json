@@ -34,11 +34,8 @@
     "extra": {
         "laravel": {
             "providers": [
-              "TeamsLoggerProvider"
-            ],
-            "aliases": {
-                "TeamsLoggerService": "CbyteDigital\\TeamsLogger\\Facades\\TeamsLoggerService"
-            }
+              "CbyteDigital\\TeamsLogger\\TeamsLoggerProvider"
+            ]
         }
     }
 }
