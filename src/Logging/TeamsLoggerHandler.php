@@ -46,7 +46,9 @@ class TeamsLoggerHandler extends AbstractProcessingHandler
             ];
 
         foreach ($record['context']['exception']->getTrace() as $trace) {
-            $stacktrace .= $trace['file'] . '<br>';
+            if (isset($trace['file'])) {
+                $stacktrace .= $trace['file'] . '<br>';
+            }
         }
 
         $message = new TeamsLoggerMessage([
