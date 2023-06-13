@@ -1,4 +1,4 @@
-# Laravel BI Data Export
+# Laravel Teams Exception Logger
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/cbytedigital/laravel-bi-data-export.svg)](https://packagist.org/packages/cbytedigital/laravel-bi-data-export)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/cbytedigital/laravel-bi-data-export.svg)](https://packagist.org/packages/cbytedigital/laravel-bi-data-export)
 [![Software License](https://img.shields.io/packagist/l/cbytedigital/laravel-bi-data-export.svg)](LICENSE.md)
