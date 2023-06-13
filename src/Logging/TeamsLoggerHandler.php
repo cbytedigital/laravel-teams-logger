@@ -71,10 +71,14 @@ class TeamsLoggerHandler extends AbstractProcessingHandler
                             'name' => 'User:',
                             'value' => request()->user() instanceof User ? request()->user()->email : 'Unknown',
                         ],
-                        [
-                            'name' => 'Execution time:',
-                            'value' => floor((microtime(true) - LARAVEL_START) * 1000) . 'ms',
-                        ],
+                        (
+                            defined (LARAVEL_START) ?
+                            [
+                                'name' => 'Execution time:',
+                                'value' => floor((microtime(true) - LARAVEL_START) * 1000) . 'ms',
+                            ]
+                            : []
+                        ),
                         $whitespace,
                         $whitespace,
                         $whitespace,
