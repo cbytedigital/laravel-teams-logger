@@ -6,6 +6,6 @@ pipelines:
         clone:
           enabled: false
         script:
-          - git clone --bare git@bitbucket.org:cbytedigital/laravel-teams-exception-logger.git
-          - cd laravel-teams-exception-logger.git
-          - git push --mirror git@github.com:cbytedigital/laravel-teams-exception-logger.git
+          - git clone --bare git@bitbucket.org:cbytedigital/laravel-teams-logger.git
+          - cd laravel-teams-logger.git
+          - git push --mirror git@github.com:cbytedigital/laravel-teams-logger.git
