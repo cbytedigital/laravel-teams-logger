@@ -3,6 +3,7 @@
 namespace CbyteDigital\TeamsLogger\Logging;
 
 use App\Models\User;
+use CbyteDigital\TeamsLogger\Enums\LogType;
 use Monolog\Logger;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\LogRecord;
@@ -15,15 +16,19 @@ class TeamsLoggerHandler extends AbstractProcessingHandler
     /** @var string */
     private $name;
 
+    /** @var string */
+    private string $type;
+
     /**
      * @param string $name
      */
-    public function __construct($url, $level = Logger::DEBUG, $name = 'Default')
+    public function __construct($url, $level = Logger::DEBUG, string $name = 'Default', $type = LogType::STRING)
     {
         parent::__construct($level);
 
         $this->url   = $url;
         $this->name  = $name;
+        $this->type  = $type;
     }
 
     /**
@@ -33,6 +38,68 @@ class TeamsLoggerHandler extends AbstractProcessingHandler
      */
     protected function getMessage(array $record)
     {
+        if ($this->type == LogType::EXCEPTION) {
+            return $this->getExceptionLoggerMessage($record);
+        }
+
+        return $this->getStringLoggerMessage($record);
+    }
+
+    /**
+     * @param array $record
+     *
+     * @return array|void
+     */
+    private function getStringLoggerMessage(array $record) {
+        $message = new TeamsLoggerMessage([
+            "summary" => "Error 🚨",
+            "title" => "Error 🚨",
+            'sections' => [
+                [
+                    'activityTitle'    => 'Info',
+                    'activitySubtitle' => '',
+                    'facts'            => [
+                        [
+                            'name' => 'Message',
+                            'value' => $record['message'],
+                        ],
+                        [
+                            'name' => 'Request',
+                            'value' => '<a href="' . request()->getSchemeAndHttpHost() .
+                                request()->getRequestUri() . '">'.request()->getRequestUri().'</a>',
+                        ],
+                        [
+                            'name' => 'Type:',
+                            'value' => request()->getMethod(),
+                        ],
+                        [
+                            'name' => 'User:',
+                            'value' => request()->user() instanceof User ? request()->user()->email : 'Unknown',
+                        ],
+                        (
+                        defined ('LARAVEL_START') ?
+                            [
+                                'name' => 'Execution time:',
+                                'value' => floor((microtime(true) - LARAVEL_START) * 1000) . 'ms',
+                            ]
+                            : []
+                        ),
+                    ],
+                    'markdown' => true
+                ],
+            ],
+            'themeColor' => '721C24',
+        ]);
+
+        return $message->jsonSerialize();
+    }
+
+    /**
+     * @param array $record
+     *
+     * @return array|void
+     */
+    private function getExceptionLoggerMessage(array $record) {
         if (!isset($record['context']['exception'])) {
             return;
         }
@@ -40,9 +107,9 @@ class TeamsLoggerHandler extends AbstractProcessingHandler
         $stacktrace = '';
 
         $whitespace = [
-                'name' => ' ',
-                'value' => ' ',
-            ];
+            'name' => ' ',
+            'value' => ' ',
+        ];
 
         foreach ($record['context']['exception']->getTrace() as $trace) {
             if (isset($trace['file'])) {
@@ -72,7 +139,7 @@ class TeamsLoggerHandler extends AbstractProcessingHandler
                             'value' => request()->user() instanceof User ? request()->user()->email : 'Unknown',
                         ],
                         (
-                            defined ('LARAVEL_START') ?
+                        defined ('LARAVEL_START') ?
                             [
                                 'name' => 'Execution time:',
                                 'value' => floor((microtime(true) - LARAVEL_START) * 1000) . 'ms',
