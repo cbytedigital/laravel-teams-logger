@@ -22,7 +22,7 @@ class TeamsLoggerHandler extends AbstractProcessingHandler
     /**
      * @param string $name
      */
-    public function __construct($url, $level = Logger::DEBUG, string $name = 'Default', $type = LogType::STRING)
+    public function __construct($url, $level = Logger::DEBUG, string $name = 'Default', $type = LogType::EXCEPTION)
     {
         parent::__construct($level);
 

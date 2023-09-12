@@ -10,6 +10,6 @@ use Illuminate\Validation\Rules\Enum;
  */
 final class LogType extends Enum
 {
-    const STRING = 'Simple';
+    const STRING = 'String';
     const EXCEPTION = 'Exception';
 }

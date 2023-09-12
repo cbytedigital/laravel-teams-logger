@@ -10,7 +10,7 @@ class TeamsLogger extends MonologLogger
     /**
      * @param string $name
      */
-    public function __construct($url, $level = MonologLogger::DEBUG, $name = 'Default', $type = LogType::STRING)
+    public function __construct($url, $level = MonologLogger::DEBUG, $name = 'Default', $type = LogType::EXCEPTION)
     {
         parent::__construct('teams-logger');
 
