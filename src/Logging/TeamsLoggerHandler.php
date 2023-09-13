@@ -38,11 +38,9 @@ class TeamsLoggerHandler extends AbstractProcessingHandler
      */
     protected function getMessage(array $record)
     {
-        if ($this->type == LogType::EXCEPTION) {
-            return $this->getExceptionLoggerMessage($record);
-        }
-
-        return $this->getStringLoggerMessage($record);
+        return $this->type == LogType::EXCEPTION ?
+            $this->getExceptionLoggerMessage($record) :
+            $this->getStringLoggerMessage($record);
     }
 
     /**
