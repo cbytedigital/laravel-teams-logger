@@ -58,7 +58,7 @@ $ composer test
 
 This package is completely free to use. If it makes it to your production environment we would highly appreciate you sending us a postcard from your hometown! 👏🏼
 
-Our address is: CBYTE Software B.V., Heuvelkamp 2a, 6658DE Beneden-Leeuwen, Netherlands.
+Our address is: CBYTE Software B.V., Parallelweg 27, 5223AL 's-Hertogenbosch, Netherlands.
 
 ## License
 
